@@ -125,15 +125,15 @@ Labels are stored in another file (`./UCI HAR Dataset/activity_labels.txt`) so w
 ## Results
 The result object called `result_data` contain 180 rows, for each of the 30 diffent subjects (1:30) there are 6 different records one for each activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).
 Each row cointains 68 variable:
-1. subject                     
-2. activity                  
-3. tBodyAcc-mean()-X
-4. tBodyAcc-mean()-Y
-5. tBodyAcc-mean()-Z
-6. tBodyAcc-std()-X       
-7. tBodyAcc-std()-Y
-8. tBodyAcc-std()-Z
-9. tGravityAcc-mean()-X     
+01. subject                     
+02. activity                  
+03. tBodyAcc-mean()-X
+04. tBodyAcc-mean()-Y
+05. tBodyAcc-mean()-Z
+06. tBodyAcc-std()-X       
+07. tBodyAcc-std()-Y
+08. tBodyAcc-std()-Z
+09. tGravityAcc-mean()-X     
 10. tGravityAcc-mean()-Y        
 11. tGravityAcc-mean()-Z
 12. tGravityAcc-std()-X        
