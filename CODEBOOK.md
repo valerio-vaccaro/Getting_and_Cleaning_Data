@@ -194,6 +194,7 @@ Each row cointains 68 variable:
 66. fBodyBodyGyroMag-std()     
 67. fBodyBodyGyroJerkMag-mean()
 68. fBodyBodyGyroJerkMag-std()
+
 For each combination of subject and activity (different rows) the columns 3:68 store the mean value for the variable idientified from the column name.
  
 The variable `filtered_data` contain the same rows and all the observation (10299) recorded in the original dataset before appy the mean function.
