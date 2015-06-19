@@ -108,6 +108,8 @@ names(filtered_data) <- c("subject","activity", as.character(names) )
 rm(names)
 rm(col_names)
 rm(col_flags)
+# 4.d. Intermediate export
+write.table(filtered_data,"filtered_data.txt",row.name=FALSE)
 
 # 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable f
 # for each activity and each subject.

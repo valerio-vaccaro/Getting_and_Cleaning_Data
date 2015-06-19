@@ -19,8 +19,15 @@ The analysis contained in the R script called run_analysis.R does the following:
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 ## Execute the script
-1. Install teh dependencies *data.table* and *reshape2*
-2. Download the [dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip ) in your R workspace directory and unzip it; you will found a folder with name *UCI HAR Dataset*
-3. Download  the file *run_analysis.R* in your R workspace directory 
-4. Execute the script writing *source("run_analysis.R")*
-5. Check the result files 
+1. Download the [dataset](https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip ) in your R workspace directory and unzip it; you will found a folder with name `UCI HAR Dataset`
+2. Download  the file `run_analysis.R` in your R workspace directory 
+3. Execute the script writing `source("run_analysis.R")`
+4. Check the file `result_data.txt`
+
+## Results
+The file `result_data.txt` contain the dataset exported at the end of the script.
+
+
+
+Complete description of the elaboration is written inside the file CODEBOOK.md.
+
