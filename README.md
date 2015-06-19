@@ -25,9 +25,8 @@ The analysis contained in the R script called run_analysis.R does the following:
 4. Check the file `result_data.txt`
 
 ## Results
-The file `result_data.txt` contain the dataset exported at the end of the script.
-
-
+The file `result_data.txt` contain the dataset exported at the end of the script; that file contain 180 rows, for each of the 30 diffent subjects (1:30) there are 6 different records one for each activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).
+Each row cointains 68 variable: subject, activity, and 66 variables from the filtered dataset. 
 
 Complete description of the elaboration is written inside the file CODEBOOK.md.
 

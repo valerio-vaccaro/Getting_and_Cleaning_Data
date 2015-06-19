@@ -132,28 +132,68 @@ Each row cointains 68 variable:
     5. tBodyAcc-mean()-Z
     6. tBodyAcc-std()-X       
     7. tBodyAcc-std()-Y
-    8.tBodyAcc-std()-Z"            "tGravityAcc-mean()-X"       
-    [10] "tGravityAcc-mean()-Y"        "tGravityAcc-mean()-Z"        "tGravityAcc-std()-X"        
-    [13] "tGravityAcc-std()-Y"         "tGravityAcc-std()-Z"         "tBodyAccJerk-mean()-X"      
-    [16] "tBodyAccJerk-mean()-Y"       "tBodyAccJerk-mean()-Z"       "tBodyAccJerk-std()-X"       
-    [19] "tBodyAccJerk-std()-Y"        "tBodyAccJerk-std()-Z"        "tBodyGyro-mean()-X"         
-    [22] "tBodyGyro-mean()-Y"          "tBodyGyro-mean()-Z"          "tBodyGyro-std()-X"          
-    [25] "tBodyGyro-std()-Y"           "tBodyGyro-std()-Z"           "tBodyGyroJerk-mean()-X"     
-    [28] "tBodyGyroJerk-mean()-Y"      "tBodyGyroJerk-mean()-Z"      "tBodyGyroJerk-std()-X"      
-    [31] "tBodyGyroJerk-std()-Y"       "tBodyGyroJerk-std()-Z"       "tBodyAccMag-mean()"         
-    [34] "tBodyAccMag-std()"           "tGravityAccMag-mean()"       "tGravityAccMag-std()"       
-    [37] "tBodyAccJerkMag-mean()"      "tBodyAccJerkMag-std()"       "tBodyGyroMag-mean()"        
-    [40] "tBodyGyroMag-std()"          "tBodyGyroJerkMag-mean()"     "tBodyGyroJerkMag-std()"     
-    [43] "fBodyAcc-mean()-X"           "fBodyAcc-mean()-Y"           "fBodyAcc-mean()-Z"          
-    [46] "fBodyAcc-std()-X"            "fBodyAcc-std()-Y"            "fBodyAcc-std()-Z"           
-    [49] "fBodyAccJerk-mean()-X"       "fBodyAccJerk-mean()-Y"       "fBodyAccJerk-mean()-Z"      
-    [52] "fBodyAccJerk-std()-X"        "fBodyAccJerk-std()-Y"        "fBodyAccJerk-std()-Z"       
-    [55] "fBodyGyro-mean()-X"          "fBodyGyro-mean()-Y"          "fBodyGyro-mean()-Z"         
-    [58] "fBodyGyro-std()-X"           "fBodyGyro-std()-Y"           "fBodyGyro-std()-Z"          
-    [61] "fBodyAccMag-mean()"          "fBodyAccMag-std()"           "fBodyBodyAccJerkMag-mean()" 
-    [64] "fBodyBodyAccJerkMag-std()"   "fBodyBodyGyroMag-mean()"     "fBodyBodyGyroMag-std()"     
-    [67] "fBodyBodyGyroJerkMag-mean()" "
-    68. fBodyBodyGyroJerkMag-std()"
-
-The variable `filtered_data` contain the same rows and all the observation (10299)
+    8. tBodyAcc-std()-Z
+    9. tGravityAcc-mean()-X     
+    10. tGravityAcc-mean()-Y        
+    11. tGravityAcc-mean()-Z
+    12. tGravityAcc-std()-X        
+    13] tGravityAcc-std()-Y
+    14. tGravityAcc-std()-Z
+    15. tBodyAccJerk-mean()-X     
+    16. tBodyAccJerk-mean()-Y
+    17. tBodyAccJerk-mean()-Z
+    18. tBodyAccJerk-std()-X       
+    19. tBodyAccJerk-std()-Y
+    20. tBodyAccJerk-std()-Z
+    21. tBodyGyro-mean()-X        
+    22. tBodyGyro-mean()-Y
+    23. tBodyGyro-mean()-Z
+    24. tBodyGyro-std()-X          
+    25. tBodyGyro-std()-Y
+    26. tBodyGyro-std()-Z
+    27. tBodyGyroJerk-mean()-X
+    28. tBodyGyroJerk-mean()-Y
+    29. tBodyGyroJerk-mean()-Z
+    30. tBodyGyroJerk-std()-X      
+    31. tBodyGyroJerk-std()-Y
+    32. tBodyGyroJerk-std()-Z
+    33. tBodyAccMag-mean()       
+    34. tBodyAccMag-std()
+    35. tGravityAccMag-mean()
+    36. tGravityAccMag-std()       
+    37. tBodyAccJerkMag-mean()
+    38. tBodyAccJerkMag-std()
+    39. tBodyGyroMag-mean()       
+    40. tBodyGyroMag-std()
+    41. tBodyGyroJerkMag-mean()    
+    42. tBodyGyroJerkMag-std()     
+    43. fBodyAcc-mean()-X
+    44. fBodyAcc-mean()-Y
+    45. fBodyAcc-mean()-Z          
+    46. fBodyAcc-std()-X
+    47. fBodyAcc-std()-Y
+    48. fBodyAcc-std()-Z           
+    49. fBodyAccJerk-mean()-X
+    50. fBodyAccJerk-mean()-Y
+    51. fBodyAccJerk-mean()-Z      
+    52. fBodyAccJerk-std()-X
+    53. fBodyAccJerk-std()-Y
+    54. fBodyAccJerk-std()-Z       
+    55. fBodyGyro-mean()-X
+    56. fBodyGyro-mean()-Y
+    57. fBodyGyro-mean()-Z  
+    58. fBodyGyro-std()-X
+    59. fBodyGyro-std()-Y
+    60. fBodyGyro-std()-Z          
+    61. fBodyAccMag-mean()
+    62. fBodyAccMag-std()
+    63. fBodyBodyAccJerkMag-mean() 
+    64. fBodyBodyAccJerkMag-std()
+    65. fBodyBodyGyroMag-mean()
+    66. fBodyBodyGyroMag-std()     
+    67. fBodyBodyGyroJerkMag-mean()
+    68. fBodyBodyGyroJerkMag-std()
+For each combination of subject and activity (different rows) the columns 3:68 store the mean value for the variable idientified from the column name.
+ 
+The variable `filtered_data` contain the same rows and all the observation (10299) recorded in the original dataset before appy the mean function.
 
