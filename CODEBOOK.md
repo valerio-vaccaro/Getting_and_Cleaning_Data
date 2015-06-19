@@ -18,9 +18,9 @@ The experiments have been carried out with a group of 30 volunteers within an ag
 The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used. From each window, a vector of features was obtained by calculating variables from the time and frequency domain. See 'features_info.txt' for more details. 
 
 The original dataset contains:
-+ README.txt Readme file
-+ features_info.txt Contain information about the variables used on the feature vector
-+ features.txt (561x2) List of all features recorded (variables), the name is composed in this way A-B-C (-C is optional) where:
++ `README.txt` Readme file
++ `features_info.txt` Contain information about the variables used on the feature vector
++ `features.txt` List of all features recorded (561 record for two columns: variable numbers and variable names), the name is composed in this way A-B-C (-C is optional) where:
     + A is one of the following:
         * tBodyAcc
         * tGravityAcc
@@ -39,7 +39,6 @@ The original dataset contains:
         * fBodyAccJerkMag
         * fBodyGyroMag
         * fBodyGyroJerkMag
-
     + B is the kind of elaboration:
         * mean() mean value
         * std() standard deviation
@@ -58,88 +57,82 @@ The original dataset contains:
         * kurtosis() kurtosis of the frequency domain signal 
         * bandsEnergy() energy of a frequency interval within the 64 bins of the FFT of each window
         * angle() angle between to vectors
-
-    +C is the (optional) axis:
+    + C is the (optional) axis:
         * X
         * Y
         * Z
-
     + Additional vectors obtained by averaging the signals in a signal window sample. These are used on the angle() variable:
         * gravityMean
         * tBodyAccMean
         * tBodyAccJerkMean
         * tBodyGyroMean
-    
-+ activity_labels.txt - contains the connection between activity number and activity name (6 rows of 2 variables), the know activities are:
++ `activity_labels.txt` - contains the connection between activity number and activity name (6 rows of 2 variables: number and name), the know activities are:
     * WALKING
     * WALKING_UPSTAIR
     * WALKING_DOWNSTAIR
     * SITTING
     * STANDING
     * LAYING
-
 + Observations:
-    + train/X_train.txt observation from the training set (7352 observations of 561 variables)
-    + test/X_test.txt observation from the test set (2947 observations of 561 variables)
-        
+    + `train/X_train.txt` observation from the training set (7352 observations of 561 variables)
+    + `test/X_test.txt` observation from the test set (2947 observations of 561 variables)
 + Activities:
-    + train/y_train.txt Activity label for the training set (activity name available with join with activity_labels.txt)
-    + test/y_test.txt Activity label for the test set
-        
+    + `train/y_train.txt` Activity label for the training set (activity name available with join with activity_labels.txt) (7352 observations of 1 variables)
+    + `test/y_test.txt` Activity label for the test set (2947 observations of 1 variables)
 + Subjects:       
-    + train/subject_train.txt The subject (range 1:30) who performed the activity for each window sample in train subset
-    + test/subject_test.txt The subject (range 1:30) who performed the activity for each window sample in test subset
-
+    + `train/subject_train.txt` The subject (range 1:30) who performed the activity for each window sample in train subset (7352 observations of 1 variables)
+    + `test/subject_test.txt` The subject (range 1:30) who performed the activity for each window sample in test subset (2947 observations of 1 variables)
 + Raw datas:
-    + train/Inertial Signals/* Raw training data set
-    + test/Inertial Signals/* Raw test data set
+    + `train/Inertial Signals/*` Raw training data set
+    + `test/Inertial Signals/*` Raw test data set
 
 ## Analisys performed
 1. Merges the training and the test sets to create one data set.
     - Merget record dataset:
-        * Read variables in the train dataset from the file ./UCI HAR Dataset/train/X_train.txt and save in the var record_train (7352x561)
-        * Read variables in the test dataset from the file ./UCI HAR Dataset/test/X_test.txt and save in the var record_test (2947x561)
-        * Bind train and test set rows in a unique dataset called record_complete (10299x561)
+        * Read variables in the train dataset from the file `./UCI HAR Dataset/train/X_train.txt` and save in the var `record_train` (7352x561)
+        * Read variables in the test dataset from the file `./UCI HAR Dataset/test/X_test.txt` and save in the var `record_test` (2947x561)
+        * Bind train and test set rows in a unique dataset called `record_complete` (10299x561)
     - Merge subject dataset:
-        * Read subjects in the train dataset from the file ./UCI HAR Dataset/train/subjects_train.txt and save in the var subjects_train (7352x1)
-        * Read subjects in the test dataset from the file ./UCI HAR Dataset/test/subjects_test.txt and save in the var subjects_test (2947x1)
-        * Bind train and test set rows in a unique dataset called subjects_complete (10299x1)
+        * Read subjects in the train dataset from the file `./UCI HAR Dataset/train/subjects_train.txt` and save in the var `subjects_train` (7352x1)
+        * Read subjects in the test dataset from the file `./UCI HAR Dataset/test/subjects_test.txt` and save in the var `subjects_test` (2947x1)
+        * Bind train and test set rows in a unique dataset called `subjects_complete` (10299x1)
         * Add the name "subject" to the column 
     - Merge activity dataset:
-        * Read features in the train dataset from the file ./UCI HAR Dataset/train/y_train.txt and save in the var features_train (7352x1)
-        * Read features in the test dataset from the file ./UCI HAR Dataset/test/y_test.txt and save in the var features_test (2947x1)
-        * Bind train and test set rows in a unique dataset called features_complete (10299x1)
+        * Read features in the train dataset from the file `./UCI HAR Dataset/train/y_train.txt` and save in the var `features_train` (7352x1)
+        * Read features in the test dataset from the file `./UCI HAR Dataset/test/y_test.txt` and save in the var `features_test` (2947x1)
+        * Bind train and test set rows in a unique dataset called `features_complete` (10299x1)
         * Add the name "features" to the column 
-    - Paste all together in a unique dataset (10299x563) called data_complete, first column will contain subjects, second will contain activities and others columns will be the same like in record_complete dataset
-
+    - Paste all together in a unique dataset (10299x563) called `data_complete`, first column will contain subjects, second will contain activities and others columns will be the same like in record_complete dataset
 2. Extracts only the measurements on the mean and standard deviation for each measurement.
-It's means reduce the column deleting all the collumns dont contain mean or standard deviation in name, unfortunately column name in contained in another file (features.txt) so we can procede as follow:
-    - Read column name from the file features.txt and store in the variable col_names (561x2)
-    - Create a flags array with TRUE if the name contain "-mean()" or "-std()" substrings and save on col_flags (561x1)
-    - Add TRUE, TRUE on top of array for maintain subject and activity columns and save on flags array (563x1)
-    - Filter columns on data_complete based on flags calculated and store result on filtered_data (10299 observations for 68 variables, 66 variables with mean/std + subject column + activity column)
-
+It's means reduce the column deleting all the collumns dont contain mean or standard deviation in name, unfortunately column name in contained in another file (`features.txt`) so we can procede as follow:
+    - Read column name from the file `./UCI HAR Dataset/features.txt` and store in the variable `col_names` (561x2)
+    - Create a flags array with TRUE if the name contain "-mean()" or "-std()" substrings and save on `col_flags` (561x1)
+    - Add TRUE, TRUE on top of array for maintain subject and activity columns and save on `flags` array (563x1)
+    - Filter columns on `data_complete` based on `flags` calculated and store result on `filtered_data` (10299 observations for 68 variables, 66 variables with mean/std + subject column + activity column)
 3. Uses descriptive activity names to name the activities in the data set.
-Labels are stored in another file (activity_labels.txt) so we can procede in this way:
-    - Read activity labels from the file activity_labels.txt and store in on activities variable (6x2)
-    - Convert first column of filtered_data to factors
-    - Covert second column of filtered_data to factors with defined labels taken from second column of activities variable
-
+Labels are stored in another file (`./UCI HAR Dataset/activity_labels.txt`) so we can procede in this way:
+    - Read activity labels from the file `activity_labels.txt` and store in on `activities` variable (6x2)
+    - Convert first column of `filtered_data` to factors
+    - Covert second column of `filtered_data` to factors with defined labels taken from second column of `activities` variable
 4. Appropriately labels the data set with descriptive variable names. 
-    - Filter column names based on flags and store on names variable 
-    - Updates column data names using "subject" and "activity" for first and second columns, for other columns use labels stored on names array
-
+    - Filter column names based on `flags` and store on `names` variable (66x1)
+    - Updates column data names using "subject" and "activity" for first and second columns, for other columns use labels stored on `names` array
 5. From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
-    - Order filtered_data using activity and subject columns (remember they are factors) and update filtered data (10299x68, same size like before)
-    - Aggregate all columns (3:end) using the groups on columns 1:2 with the function mean (it compute the mean of aggregated rows) and store on result_data variable (180 observations for 68 variables)
-    -Saving result in the local file result_data.txt
+    - Order `filtered_data` using activity and subject columns (remember they are factors) and update `filtered data` (10299x68, same size like before)
+    - Aggregate all columns (3:end) using the groups on columns 1:2 with the function mean (it compute the mean of aggregated rows) and store on `result_data` variable (180 observations for 68 variables)
+    -Saving result in the local file `result_data.txt`
 
 ## Results
-The result object called `result_data` contain 68 variable:
-    1. "subject"                     
-    "activity"                    "tBodyAcc-mean()-X"          
-     [4] "tBodyAcc-mean()-Y"           "tBodyAcc-mean()-Z"           "tBodyAcc-std()-X"           
-     [7] "tBodyAcc-std()-Y"            "tBodyAcc-std()-Z"            "tGravityAcc-mean()-X"       
+The result object called `result_data` contain 180 rows, for each of the 30 diffent subjects (1:30) there are 6 different records one for each activity (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING).
+Each row cointains 68 variable:
+    1. subject                     
+    2. activity                  
+    3. tBodyAcc-mean()-X
+    4. tBodyAcc-mean()-Y
+    5. tBodyAcc-mean()-Z
+    6. tBodyAcc-std()-X       
+    7. tBodyAcc-std()-Y
+    8.tBodyAcc-std()-Z"            "tGravityAcc-mean()-X"       
     [10] "tGravityAcc-mean()-Y"        "tGravityAcc-mean()-Z"        "tGravityAcc-std()-X"        
     [13] "tGravityAcc-std()-Y"         "tGravityAcc-std()-Z"         "tBodyAccJerk-mean()-X"      
     [16] "tBodyAccJerk-mean()-Y"       "tBodyAccJerk-mean()-Z"       "tBodyAccJerk-std()-X"       
@@ -159,7 +152,8 @@ The result object called `result_data` contain 68 variable:
     [58] "fBodyGyro-std()-X"           "fBodyGyro-std()-Y"           "fBodyGyro-std()-Z"          
     [61] "fBodyAccMag-mean()"          "fBodyAccMag-std()"           "fBodyBodyAccJerkMag-mean()" 
     [64] "fBodyBodyAccJerkMag-std()"   "fBodyBodyGyroMag-mean()"     "fBodyBodyGyroMag-std()"     
-    [67] "fBodyBodyGyroJerkMag-mean()" "fBodyBodyGyroJerkMag-std()"
+    [67] "fBodyBodyGyroJerkMag-mean()" "
+    68. fBodyBodyGyroJerkMag-std()"
 
-The variable `filtered_data`
+The variable `filtered_data` contain the same rows and all the observation (10299)
 
